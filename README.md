@@ -1,4 +1,4 @@
-# Food-List
+# Food-List (except this is a branch that I made and I'm super proud of it so don't mess with it)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
