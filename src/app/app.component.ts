@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'food-list';
+  title = 'food list';
+  inventory = ['beef', 'potatoes', 'carrots', 'peas', 'onions', 'flour', 'tomato sauce', 'seasoning']
 }
