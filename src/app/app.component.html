@@ -1,5 +1,9 @@
 <h1>{{title}}</h1>
 <hr />
-<ul>
-  <li *ngFor="let food of inventory">{{food}}</li>
+<input (keydown.enter)="addToFoodList()" type="text" placeholder="Enter food-thing" [(ngModel)]="newFood"> | <button (click)="addToFoodList()">Commit thing to list</button>
+<ul id="theList">
+  <li *ngFor="let food of inventory;let i=index;">
+    {{food}}
+    <button (click)="removeFromFoodList(i)">X</button>
+  </li>
 </ul>
