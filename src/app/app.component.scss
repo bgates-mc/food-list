@@ -28,5 +28,6 @@ hr {
             color: #cc000099;
             cursor: not-allowed;
             outline: none;
+                &:focus {outline: 1px solid red}
         }
 }
