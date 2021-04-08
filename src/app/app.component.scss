@@ -1,7 +1,17 @@
 h1 {
     text-align: center;
-    text-transform: capitalize;
-    color: brown;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 13vw;
+    color: hsla(0,0,100,.4);
+    background: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
+    margin: 0;
+    padding: 60px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: hsla(0,0,100,.4);
+    background-clip: text;
+    text-fill-color: hsla(0,0,100,.4);
 }
 
 hr {
@@ -31,3 +41,7 @@ hr {
                 &:focus {outline: 1px solid red}
         }
 }
+
+// remind me - why can't i style HTML and/or BODY here? there was a trick to it...
+// is there a 'framerate/cycle' to the checking of that input box's validity?
+// add back in dupe checking

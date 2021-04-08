@@ -7,44 +7,35 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "food list";
-  inventory = ["beef", "potatoes", "carrots", "peas", "onions", "flour", "tomato sauce", "seasoning"];
+  inventory = [
+    {name: "beef", color: this.getRandomColor()}
+  ];
   newFood = "";
   addToFoodList() {
     if (this.newFoodValidator()) {
-      this.inventory.push(this.newFood.trim().toLowerCase());
+      //this.inventory.push(this.newFood.trim().toLowerCase());
+      this.inventory.push({name: this.newFood.trim().toLowerCase(), color: this.getRandomColor()});
       this.newFood = "";
     }
   }
   newFoodValidator() {
-    if (this.newFood.trim() !== "") {
-      return !this.inventory.includes(this.newFood.trim().toLowerCase());
-    }
-    return false;
+    //return this.newFood.trim() !== "" && !this.inventory.includes(this.newFood.trim().toLowerCase());
+    return this.newFood.trim() !== "";
   }
-  newFoodValidator2() {
-    if (this.newFood.trim() === "") {
-      return false;
-    }
-
-    if (this.inventory.includes(this.newFood.trim().toLowerCase())) {
-      return false;
-    }
-
-    return true;
-  }
-  newFoodValidator3() {
-    return this.newFood.trim() !== "" && !this.inventory.includes(this.newFood.trim().toLowerCase());
-  }
-  newFoodValidator4() {
-    const isBlank = this.newFood.trim() === "";
-    const isDuplicate = this.inventory.includes(this.newFood.trim().toLowerCase());
-
-    return !(isBlank || isDuplicate);
-  }
+  
   removeFromFoodList(index) {
     this.inventory.splice(index, 1);
+  }
+
+  getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
 }
 
 // what's next?
-// because I'm eager to start getting into some more designy things but need to continue to lay a more traditional foundation of knowledge first, maybe we could give these things a random color when added or something?
+// convert these array strings into objects (name and color) (use .name)

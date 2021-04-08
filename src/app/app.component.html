@@ -3,8 +3,8 @@
 <input (keydown.enter)="addToFoodList()" type="text" placeholder="Enter food-thing" [(ngModel)]="newFood" />
 | <button (click)="addToFoodList()" [disabled]="!newFoodValidator()">Commit thing to list</button>
 <ul id="theList">
-  <li *ngFor="let food of inventory; let i = index">
-    {{ food }}
+  <li *ngFor="let food of inventory; let i = index" style="color: {{food.color}}">
+    {{ food.name }}
     <button (click)="removeFromFoodList(i)">X</button>
   </li>
 </ul>
